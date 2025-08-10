@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .ar-content {
+            position: fixed;
+            display: none;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            /* Crucial for containing all content */
+            overflow-y: auto;
+            /* Enables scrolling */
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            z-index: 99;
+        }
+
+        .ar-content img {
+            max-width: 100%;
+            max-height: 30vh !important;
+            /* Reduced from 40vh for better fit */
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+
+        /* Add this for proper caption spacing */
+        .caption {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            margin: 5px 0 15px 0;
+        }
+
+        .video-container {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Marker 1: Jousting in El Born -->
+    <div id="content1" class="ar-content">
+        <span class="close-btn" onclick="hideContent('content1')">✕</span>
+        <h2>Medieval Jousting in El Born</h2>
+
+        <img src="images/jousting.jpg" alt="Medieval jousting tournament">
+        <p class="caption">15th century depiction of a jousting tournament</p>
+
+        <p>In the 14th-16th centuries, El Born was the heart of Barcelona's noble district and hosted spectacular
+            jousting tournaments. The Plaça del Born served as an open-air arena where knights demonstrated their skills
+            before royalty and cheering crowds.</p>
+
+        <img src="images/jousting 2.webp" alt="Arc de Triomf">
+        <p class="caption">Arc de Triomf, built for the 1888 World's Fair but echoing Barcelona's medieval past</p>
+
+        <p>These tournaments were not just entertainment but crucial displays of military prowess. Winners gained
+            prestige, royal favor, and sometimes even the hand of noble ladies. The nearby Arc de Triomf, though built
+            later for the 1888 World's Fair, stands as a monument to this chivalric tradition.</p>
+    </div>
+
+    <!-- Marker 2: El Born Market -->
+    <div id="content2" class="ar-content">
+        <span class="close-btn" onclick="hideContent('content2')">✕</span>
+        <h2>The Historic Born Market</h2>
+
+        <img src="images/market.jpg" alt="El Born Market building">
+        <p class="caption">The iron-and-glass structure of Mercat del Born</p>
+
+        <p>The iconic Mercat del Born, built in 1876, was Barcelona's first iron-framed structure and the city's main
+            food market until 1971. Its cast-iron columns and glass roof represent the industrial revolution's impact on
+            Barcelona's architecture.</p>
+
+        <img src="images/market 2.jpg" alt="Archaeological site">
+        <p class="caption">Archaeological remains beneath the market</p>
+
+        <p>During renovations in 2002, workers discovered the remains of 1700s Barcelona beneath the market floor - an
+            entire neighborhood demolished after the 1714 siege. Today it houses one of Europe's most remarkable urban
+            archaeological sites, preserving the streets and foundations of homes destroyed during the War of Spanish
+            Succession.</p>
+    </div>
+
+    <!-- Marker 3: Executions in El Born -->
+    <div id="content3" class="ar-content">
+        <span class="close-btn" onclick="hideContent('content3')">✕</span>
+        <h2>Justice and Bloodshed: El Born's Dark Legacy</h2>
+
+        <img src="images/execution.png" alt="Execution scene in medieval Barcelona">
+        <p class="caption">Public executions were common spectacles in medieval Barcelona</p>
+
+        <p>For centuries, El Born served as Barcelona's primary execution ground, where justice was meted out in brutal
+            public spectacles. The area witnessed:</p>
+
+        <ul>
+            <li><strong>Medieval punishments:</strong> Beheadings for nobility, hangings for commoners</li>
+            <li><strong>Religious executions:</strong> The Spanish Inquisition burned heretics here</li>
+            <li><strong>Political repression:</strong> Particularly after the 1714 siege</li>
+        </ul>
+
+        <img src="images/excution 2.jpg" alt="Execution methods diagram">
+        <p class="caption">Methods of execution varied by social class and crime</p>
+
+        <p>The most infamous executions occurred after the War of Spanish Succession (1714), when Bourbon forces made
+            examples of Catalan leaders:</p>
+
+        <ul>
+            <li>President Rafael Casanova was executed despite his surrender</li>
+            <li>12 other council members were publicly hanged</li>
+            <li>Over 4,000 citizens were forcibly relocated</li>
+        </ul>
+
+        <p>Today, the subtle slope of Plaça del Born - designed to channel blood away - remains a sobering reminder of
+            this history. The annual September 11th memorials transform the square into a sea of flowers honoring these
+            martyrs of Catalan identity.</p>
+    </div>
+
+
+
+    <!-- Marker 4: The House of Mills -->
+    <div id="content4" class="ar-content">
+        <span class="close-btn" onclick="hideContent('content4')">✕</span>
+        <h2>The House of Mills: 12th Century Legacy</h2>
+
+        <img src="images/house.jpg" alt="Ancient water mill">
+        <p class="caption">Medieval water mill similar to those in 12th century Barcelona</p>
+
+        <p>The house, originally built in the early 12th century, stood in a landscape shaped by uneven terrain, where
+            cascading waterfalls created the perfect conditions for constructing mills. These mills became the heartbeat
+            of the area, drawing numerous textile factories to the neighborhood and giving the street its enduring
+            nickname, "The Street of the Mills."</p>
+
+        <img src="images/house 2.JPG" alt="Francesc Llorens i Riu painting">
+        <p class="caption">Francesc Llorens i Riu's painting of the dyeing workshops</p>
+
+        <p>As part of the Conjunto de Balsas de San Pedro—a complex dedicated to fabric dyeing—the house played a role
+            in the neighborhood's vibrant textile industry. This rich history is immortalized in Francesc Llorens i
+            Riu's painting <em>Drycleaner's Shop on Basses Street in Sant Pere</em>, a visual testament to the area's
+            industrial past.</p>
+    </div>
+
+    <!-- Marker 5: Forest Reverie -->
+    <div id="content5" class="ar-content">
+        <span class="close-btn" onclick="hideContent('content5')">✕</span>
+        <h2>Forest Reverie: A Watercolor Journey</h2>
+
+        <img src="images/forest 1.jpg" alt="Sunlit forest path">
+        <p class="caption">Sunlight filtering through ancient trees</p>
+
+        <p><strong style="color: #2E8B57;">The Symphony of Nature</strong><br>
+            This collection captures the profound joy of immersion in nature - the euphoria of sunlight through leaves,
+            the freedom of forest expanses, and the quiet celebration of being present. Each piece translates the
+            forest's visual poetry into watercolor harmonies.</p>
+
+        <img src="images/forest 2.jpg" alt="Tree bark textures">
+
+        <img src="images/forest 3.jpg" alt="Watercolor painting">
+
+        <p><strong style="color: #2E8B57;">Contemplation Made Visible</strong><br>
+            The impossible grandeur of trees - their fractal branches, their whispering leaves - once intimidated my
+            brush. Yet life's journey taught me to dive fearlessly into capturing this magic. My tracing technique
+            dissolves boundaries between materials, revealing nature's unified song.</p>
+
+        <img src="images/forest 4.jpg" alt="Finished painting">
+
+        <p><strong style="color: #2E8B57;">Watercolor Alchemy</strong><br>
+            These works employ flowing water techniques to mirror nature's own liquidity - where pigments bloom like
+            morning mist, and brushstrokes dance with the randomness of falling leaves. The forest's joy becomes
+            tangible through the medium's spontaneous beauty.</p>
+    </div>
+
+    <!-- Marker 6: Faces Collection -->
+    <div id="content6" class="ar-content">
+        <span class="close-btn" onclick="hideContent('content6')">✕</span>
+        <h2>Faces: Windows to the Soul</h2>
+
+        <img src="images/face 1.jpg" alt="Portrait of a man">
+        <p class="caption">Study in contemplation</p>
+
+        <p><strong style="color: #6A5ACD;">The Silent Conversation</strong><br>
+            Every face tells an unspoken story - a topography of experiences etched in subtle lines and expressions. In
+            these portraits, I seek to capture those fleeting moments when the mask slips, revealing the vulnerable
+            humanity beneath the surface.</p>
+
+        <img src="images/face 2.jpg" alt="Artist sketching">
+
+        <p><strong style="color: #6A5ACD;">The Alchemy of Likeness</strong><br>
+            Portrait work is an act of mutual trust - the subject's courage to be seen, the artist's sensitivity to see
+            truly. With each stroke, we navigate the delicate balance between representation and interpretation, between
+            physical accuracy and emotional truth.</p>
+
+        <img src="images/face 3.jpg" alt="Portrait of a woman">
+
+        <p><strong style="color: #6A5ACD;">Faces as Landscapes</strong><br>
+            I approach each portrait as I would a landscape - observing how light sculpts planes and valleys, how
+            emotion colors the terrain. These studies explore the infinite variety of human expression, from quiet
+            contemplation to unrestrained joy.</p>
+    </div>
+
+
+
+    <a-scene mindar-image="imageTargetSrc: targets.mind;" vr-mode-ui="enabled: false">
+
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+        <!-- Marker Triggers -->
+        <a-entity mindar-image-target="targetIndex: 0"></a-entity>
+        <a-entity mindar-image-target="targetIndex: 1"></a-entity>
+        <a-entity mindar-image-target="targetIndex: 2"></a-entity>
+        <a-entity mindar-image-target="targetIndex: 3"></a-entity>
+        <a-entity mindar-image-target="targetIndex: 4"></a-entity>
+        <a-entity mindar-image-target="targetIndex: 5"></a-entity>
+    </a-scene>
+
+    <script>
+        let currentContent = null;
+
+        // Show content when marker is found
+        document.querySelector('a-scene').addEventListener('targetFound', (e) => {
+            const targetIndex = e.target.getAttribute('mindar-image-target').targetIndex;
+            const contentId = `content${targetIndex + 1}`;
+
+            // Hide previous content if different
+            if (currentContent && currentContent !== contentId) {
+                hideContent(currentContent);
+            }
+
+            // Show new content
+            currentContent = contentId;
+            document.getElementById(contentId).style.display = 'block';
+        });
+
+        function hideContent(id) {
+            document.getElementById(id).style.display = 'none';
+            if (currentContent === id) currentContent = null;
+        }
+    </script>
+</body>
+
+</html>
